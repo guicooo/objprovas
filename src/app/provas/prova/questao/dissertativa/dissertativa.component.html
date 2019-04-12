@@ -1,0 +1,28 @@
+<div *ngIf="questaoAtiva && questaoAtiva.sugestoes.length > 0" class="btn-sugestaao text-center" data-toggle="modal" data-target="#exampleModal">
+    <i class="fas fa-comment"></i>
+    <i class="fas fa-exclamation"></i><br>
+
+     <span>Sugestões</span>
+</div>
+
+<a class="btn btn-resposta" data-toggle="collapse" href="#collapseResposta" role="button" aria-expanded="false" aria-controls="collapseResposta">
+Resposta
+</a>
+
+<div *ngIf="!ultimo" class="btn-group group-btn-prova">
+    <button type="button" id="avancar" (click)="avancarClick()" class="btn btn-avanca">Avançar</button>        
+</div>
+
+
+<div class="collapse" id="collapseResposta">
+  <div  class="card card-body"> 
+      <div *ngIf="questaoAtiva.resposta" [innerHTML]="questaoAtiva.resposta"></div>   
+      <div *ngIf="questaoAtiva.respostaImg">
+          <img  [src]="appService.urlImagemTarefaNet + questaoAtiva.respostaImg.toString().replace('~/','')">
+      </div>
+  </div>  
+  
+</div>
+
+
+<app-sugestoes *ngIf="questaoAtiva && questaoAtiva.sugestoes.length > 0" [questaoAtiva]="questaoAtiva"></app-sugestoes>

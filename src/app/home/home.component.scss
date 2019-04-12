@@ -1,0 +1,181 @@
+@import "../scss/default";
+.container-head-home{
+    margin: 0;
+    padding: 0;
+    top: 10px;
+}
+
+.hero-banner{
+    margin: 0;
+    padding: 20px;
+    height: 223px;
+    background-image: url("../../assets/Images/bg-conteudo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    .mask {
+        background-color: $plataform-color-1;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        margin: -20px;
+        opacity: .8;
+    }
+    h5 {
+        color: white;
+        font-size: 30px;
+        margin: 0;
+        line-height: 0.8;
+        margin-bottom: 20px;   
+        span {
+            font-size: 50px;
+            @media (max-width: 991.98px) { 
+                font-size: 40px;
+             }
+        }
+    }
+    p {
+        color: white;
+        font-size: 16px;
+    }
+    button {
+        background-color: $plataform-color-4;
+        color: white;
+        padding: 10px 80px;
+        font-size: 16px;
+    }
+    & img{
+        margin: 0;
+        padding: 0;
+        width: 230px;
+        height: auto; 
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        @media (max-width: 991.98px) { 
+            display: none;
+         }
+    }
+    @media #{#{$mobile}}{
+        margin: 0;
+        height: auto;
+        margin-bottom: 20px;
+
+    }
+}
+
+
+
+
+.hero-calendar{
+    background: $plataform-color-3;
+    text-align: center;
+    height: 223px;
+
+    & small{
+        color: $plataform-color-sidebar;
+    }
+    & h3{
+        color: #fff;
+        font-size: 6em;
+    }
+    & h4{
+        color: $plataform-color-5;
+        font-size: 2em;
+        font-weight: bold;
+    }
+    & h5{
+        font-weight: bold;
+    }
+    & hr{
+        width: 20%;
+        border:2px solid $plataform-color-sidebar;
+    }
+    @media #{#{$mobile}}{
+        height: auto;
+        & h3{font-size: 3em;}
+        & h4{font-size: 1em;}
+    }
+}
+
+
+.list-group-container{
+    margin-top: 20px;
+    background:$plataform-color-3; 
+    color: #fff;
+    & .head-group-list{
+        text-align: center;
+        color: #fff;
+        padding: 10px 0px;
+        & hr{
+            width: 10%;
+            border: 2px solid $plataform-color-5;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        & h3{
+            font-size: 24px;
+        }        
+        & h5{
+            color: $plataform-color-5;
+            font-size: 15px;
+        }
+    }
+}
+.list-group{
+    margin: 0;
+}
+
+//==Lista interna
+.table {
+    color: white;
+    thead {
+        background-color: $plataform-color-1;
+        color: #fff;
+        th {
+            border:0 !important;
+            text-indent: 10px;
+        }
+    }
+    tr {
+        text-align: center;
+        cursor:default;
+        @media #{#{$mobile}}{
+            font-size: 2vh;
+        }
+        & .notice{
+            color: $plataform-color-5;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        & .btn{
+            background: $plataform-color-5;
+            border: 0;
+            font-weight: bold;
+            color: #fff;
+            transition: all ease-in-out 0.2s;
+            &:hover{
+                background: $plataform-color-1;
+                color: #fff;
+            }
+        }
+    } 
+ 
+    &[role="list"] {
+        background-color: $plataform-color-1;
+    }
+
+    .btn-toggle-moobile {
+        .fa-pie-chart, .fa-search-plus, .fa-file-alt {
+            display: none;
+            @media #{#{$mobile}}{display: block;}
+        }
+        span {
+            display: block;
+            @media #{#{$mobile}}{display: none;}
+        }
+    }  
+
+}
+

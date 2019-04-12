@@ -1,0 +1,85 @@
+<div class="row">
+  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12" *ngFor="let item of materiaList" style="margin-bottom: 20px;">
+    <div class="m_exploitation">
+      <div class="a_exploitation_head">
+        <h1>{{ item.nome }}</h1>
+        <hr>
+      </div>
+      <div class="m_exploitation_svg" data-percent="62.5">
+        <h3>Desempenho</h3>
+
+
+        <!-- *ngIf="provaFiltrada?.notaFinal / provaFiltrada?.notaMaxima >= 30 && provaFiltrada?.notaFinal / provaFiltrada?.notaMaxima <= 60" -->
+        
+        <div class="father-circle">
+          <span style="color: white" class="number-circle">{{ item.media.toFixed(1).toString().replace('.0', '') }}<b>%</b></span>
+          <round-progress
+          [current]="item.media"
+          [max]="100"
+          [color]="item.media > 0 && item.media <= 30 ? '#E23A33' :  item.media > 30 && item.media < 60 ? '#EDBD35' : '#2DA82D'"
+          [background]="'#307AA3'"
+          [radius]="105"
+          [stroke]="14"
+          [rounded]="true"
+          [clockwise]="true"
+          [responsive]="false"
+          [duration]="800"
+          [animation]="'easeInOutQuart'"
+          [animationDelay]="0"
+          ></round-progress>
+        </div>
+
+        <a routerLink="/disciplinas/{{ item.id }}" class="m_exploitation_btn text-center">Ver detalhes</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12" *ngIf="hasMultidisciplinar" style="margin-bottom: 20px;">
+    <div class="m_exploitation">
+      <div class="a_exploitation_head">
+        <h1>Multidisciplinar</h1>
+        <hr>
+      </div>
+      <div class="m_exploitation_svg" data-percent="62.5">
+        <h3>Desempenho</h3>
+
+
+        <!-- *ngIf="provaFiltrada?.notaFinal / provaFiltrada?.notaMaxima >= 30 && provaFiltrada?.notaFinal / provaFiltrada?.notaMaxima <= 60" -->
+        
+        <div class="father-circle">
+          <span style="color: white" class="number-circle">{{ mediaMultidisciplnar }}<b>%</b></span>
+          <round-progress
+          [current]="mediaMultidisciplnar"
+          [max]="100"
+          [color]="mediaMultidisciplnar > 0 && mediaMultidisciplnar <= 30 ? '#E23A33' :  mediaMultidisciplnar > 30 && mediaMultidisciplnar < 60 ? '#EDBD35' : '#2DA82D'"
+          [background]="'#fff'"
+          [radius]="105"
+          [stroke]="14"
+          [rounded]="true"
+          [clockwise]="true"
+          [responsive]="false"
+          [duration]="800"
+          [animation]="'easeInOutQuart'"
+          [animationDelay]="0"
+          ></round-progress>
+        </div>
+
+        <a routerLink="/disciplinas/multidisciplinar" class="m_exploitation_btn text-center">Ver detalhes</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

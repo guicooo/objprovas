@@ -1,0 +1,28 @@
+<div *ngIf="mostrarForm" class="row align-items-center justify-content-md-center box-login-pai">
+    <div class="col-12">
+        <div class="box-login text-center">
+            <img src="assets/Images/logoNovo.svg" alt="">
+            <form class="form-signin" [formGroup]="formLogin" (ngSubmit)="logar()">
+                                 
+                <select formControlName="origem" class="form-control">
+                    <option value="">Selecione uma origem</option>
+                    <option value="ColegioObjetivo">Colégio Objetivo</option>
+                    <option value="ObjetivoConveniada">Objetivo Conveniada</option>                         
+                </select>
+               
+                <input type="text" class="form-control" placeholder="Login"  formControlName="login" name="login" required autofocus>
+                <input type="password" class="form-control" placeholder="Senha"  formControlName="senha" name="senha" required>                   
+                <button [disabled]="disabled" class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+       
+
+

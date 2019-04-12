@@ -1,0 +1,16 @@
+<app-title-page-prova  *ngIf="appService.provaAtiva" [color]="'red'" [title]="appService.provaAtiva.rotulo" [hideTrilha]="false"></app-title-page-prova>
+<app-cabecalho *ngIf="appService.questaoAtiva" [questaoAtiva]="appService.questaoAtiva"></app-cabecalho>
+<app-enunciado *ngIf="appService.questaoAtiva" [questaoAtiva]="appService.questaoAtiva"></app-enunciado>
+<div *ngIf="appService.provaAtiva && appService.questaoAtiva && appService.questaoAtiva.alternativas && appService.questaoAtiva.alternativas.length > 0" class="m_question_alternative">
+    <ul class="container-alternative">
+        <li *ngFor="let item of appService.questaoAtiva.alternativas; let indice = index"
+            [class]="indice == appService.indiceResposta ? appService.questaoAtiva.alternativas[indice].ehCorreta ? 'correct' : 'incorrect' : ''">           
+            <input disabled type="radio" name="selector">
+            <label [innerHTML]="devolverDescricao(indice, item.descricao)"></label>            
+            <div class="check">
+                <div class="inside"></div>
+            </div>
+        </li>       
+    </ul>
+</div>
+

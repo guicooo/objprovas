@@ -1,0 +1,253 @@
+@import "../../../../scss/componentes-boot/_variables";
+@import "../../../../scss/componentes-boot/_colors";
+
+#legenda {
+    background-color:$color-3;
+    padding-top: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 170px;
+    overflow: hidden;
+    font-size: 14px;
+    margin-top: -40px;
+    color: white !important;
+    @media #{$mobile}{
+        width: 100%;
+    }
+    div {
+        cursor: pointer;
+        font-weight: normal;
+    }
+
+}
+
+
+#legenda > .legenda-indicador {
+    display: block;
+    position: absolute;
+    background-color: #eee;
+    height: 45px;
+    opacity: .4;
+    filter: alpha(opacity=40);
+    width: 100%;
+    margin-left: -23px;
+    margin-top: -40px;
+}
+
+.hide-change-video {
+    display:none !important;
+}
+
+
+#slide-bar {
+    display:inline-block;
+    height:150px;
+    overflow:auto; 
+    width:100%;
+    @media #{$mobile}{
+        height: 118px;
+    }
+    .container-slide {
+        display:block;
+        //border:1px solid red;
+        width:3360px;
+        &.idioma-slide{            
+            border:none !important;
+        }
+        div {
+            display:inline-block;
+            margin-right:5px;
+            margin-left:5px;
+
+            transition:all ease-in-out 0.3s;
+   
+            img {
+                height: 125px;
+                transition:all ease-in-out 0.3s;
+                @media #{$mobile}{
+                    height: 90px;
+                }
+            }
+        }
+        & .active{
+            border:4px solid $color-4;
+        }
+ 
+    }
+}
+
+.select-header {
+    color: $color-1;
+    position: relative;
+    width: 200px;
+    float: right;
+    right: -20px;
+    top: -65px;
+    font-size: 20px;
+    font-weight: 700;
+    height: 39px;
+    @media #{$mobile}{
+        width: 100%;
+        float: right;
+        right: 0;
+        top: 0;
+        font-size: 17px;
+        height: auto;
+        z-index: 1000;        
+    }
+}
+
+:host /deep/ .box-slide {
+    display:inline-block;
+    margin-right:5px;
+    margin-left:5px;
+
+    transition:all ease-in-out 0.3s;
+
+    img {
+        height: 125px;
+        transition:all ease-in-out 0.3s;
+        @media #{$mobile}{
+            height: 90px;
+        }
+    }
+}
+
+
+// TAB
+.tab-pane {
+    padding: 20px;
+    background-color: $color-2;
+}
+.nav-tabs {
+    border: 0;
+    li {
+        border: 0;
+        background-color: $color-3;
+        &:hover {
+            background-color: $color-2;
+        }
+        &:active {
+            background-color: $color-2;
+        }
+        a {
+            background-color: $color-3;
+            color: $color-5;
+            i{color: $color-1;}
+            &:hover {background-color: fade($color-3, 50);}
+        }
+    }
+
+}
+
+#tab-busca {
+    padding: 0px;
+}
+.nav-tabs>li>a {
+    border: 0;
+    font-size: 20px;
+    font-weight: bold;
+    width: 180px;
+    text-align: center;
+    @media #{$tablet}{
+        width: 150px;
+    }
+    @media #{$mobile}{
+        width: 100%;
+        font-size: 16px;
+    }
+    i{
+        font-size: 23px;
+        @media #{$mobile}{
+            font-size: 18px;
+        }
+    }
+    &:hover {
+        border: 0;
+    }
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    border: 0;
+    font-weight: bold;
+    background-color: $color-2 !important;
+    color: $color-5!important;
+    &:hover {
+        border: 0;
+        background-color: $color-2;
+    }
+}
+
+.buscar-vid {
+    width: 262px;
+    @media #{$tablet}{
+        width: 217px;  
+    }
+    @media #{$mobile}{
+        width: 100%;   
+    }
+    input {
+        height: 48px;
+        font-size: 20px;
+        font-weight: bold;
+        @media #{$tablet}{
+            font-size: 15px;
+        }
+    }
+    button {
+        height: 48px;
+        i {
+            font-size: 31px;
+            color: #a7a6a6;
+            @media #{$tablet}{
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+:host /deep/ .recipiente{
+    background-color:$color-3;
+    padding: 15px;
+    margin: 0px;
+    height: 194px;
+    overflow: auto;
+    font-weight: normal;
+    p{
+        background: $color-2 !important;
+        width: 100%;
+        color: white;
+        margin-bottom: 10px;
+        padding: 15px;
+        cursor: pointer;
+        b{
+            color: #f9e926;
+            pointer-events: none;
+            position: relative;
+            display: inline-block;
+        }
+    }
+    p:last-child {
+        margin-bottom:0;
+    }
+
+}
+
+:host /deep/ .legenda {
+    b {
+        pointer-events: none;
+        color: #f9e926; 
+    }
+}
+:host /deep/ .alert-danger {
+    background-color: transparent !important;
+    border: 0!important;
+    width: 100%!important;
+    color: white!important;
+}
+
+.scroll-case{
+    & span.badge{
+        color: $color-1;
+        background-color: $color-4;
+    }
+}

@@ -1,0 +1,64 @@
+@import "../../../scss/default";
+.box-login-pai {
+    height: 98%;
+    position: absolute;
+    width: 100%;
+
+    .box-login {
+        width: 430px;
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        margin-top: -5%;
+        img {
+            width: 45vh;
+            height: auto;
+            margin-bottom: 5vh;
+        }
+        @media #{$mobile}{
+            width: 85%;
+            margin-left: 12%;
+        }
+   
+     
+        input[type=text], input[type=password], select {
+            border: 0;
+            border-radius: 0;
+            border-bottom: 4px solid #fff;
+            margin-bottom: 5px;
+            background: #fff;
+            height: 3em;
+            transition: all ease-in-out 0.3s;
+            @media #{$mobile}{
+                height: 8vh;
+            }
+        }
+        input[type=text]:focus, input[type=password]:focus{
+            border-bottom: 4px solid #D7C04D;
+        }
+        button{
+            border: 0;
+            background: #348CC8;
+            transition: all ease-in-out 0.2s;
+            padding: 10px 10px;
+        }
+        img {
+            @media #{$mobile}{
+                width: 100%;
+            } 
+        }
+        .alert-danger{
+            i{
+                font-size: 1.2em;
+            }
+            .text-alert{
+                display: inline-block;
+            }
+        }
+
+
+    }
+}
+
+
+

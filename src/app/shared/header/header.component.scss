@@ -1,0 +1,62 @@
+@import "../../scss/default";
+.navbar-provas {
+    background-color: $plataform-color-1;
+    border: 0;
+    height: 70px;
+    padding-right: 0px;
+    flex-wrap: initial !important;
+    @media #{#{$mobile}}{
+        padding-left: 0px;        }
+    h1{
+        margin: 0;
+        padding: 0;
+        img {
+            width: 180px;
+            margin-left: 10px;
+            padding: 12px 12px 12px 12px;
+        }
+        @media #{#{$mobile}}{
+            margin-left: auto;
+            margin-right: auto;        }
+    }
+
+    ul {
+        list-style: none; 
+        margin-right:0; 
+        font-size: 15px;
+        li{
+            height: 85px;
+        }
+        .btn-exit{
+            background: $plataform-color-6;
+            transition: all ease-in-out 0.3s;
+            a {
+                margin-top: 2px;
+                i{
+                    margin: 0;
+                    color: #fff;
+                    margin-top: 100%;
+                }
+
+            }
+
+        }
+        .icon-user-name{
+            padding-top: 28px;
+            i{
+                color: $plataform-color-2;
+            }
+        }
+        .user-name{
+            color: #fff;
+            padding-top: 40px;
+            font-weight: bold;
+        }
+    }
+    .navbar-right {
+        @media #{#{$mobile}}{
+            display: none !important;
+        }
+    }
+
+}

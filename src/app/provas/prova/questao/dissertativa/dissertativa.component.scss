@@ -1,0 +1,47 @@
+
+@import "../../../../scss/default";
+@import "../../../../app.component";
+
+.btn-resposta {
+    background-color: #EECB57;
+    color: white;
+    border: 1px solid;
+    font-weight: bold;
+    margin-top: 20px;
+    width: 20%;
+    @media #{#{$mobile}}{width: 47%;}
+    &:focus {
+        box-shadow: none;
+    }
+    &:hover {
+        background-color: white;
+        color: #EECB57;        
+    } 
+    &:active {
+        background-color: white;
+        color: #EECB57;        
+    } 
+}
+.group-btn-prova {
+    width: 20%;
+    @media #{#{$mobile}}{width: 47%;}
+    .btn-avanca{
+        color: white;
+        border: 1px solid;
+        font-weight: bold;
+        margin-top: 20px;
+        background-color: $Color-util-sucess; 
+        width: 100%;
+        
+    } 
+}
+
+#collapseResposta {
+    width: 95%;
+    margin-top: -1px;
+    .card  {
+        border: 1px solid #EECB57;   
+        border-radius: 0px;
+    }
+}
+

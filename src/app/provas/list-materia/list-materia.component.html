@@ -1,0 +1,11 @@
+<div *ngIf="route.children.length === 0">
+
+    <div class="m_content_header">
+        <h1 tpl-ref="principal"><b>Provas gerais – {{ serie }}</b></h1>
+        <hr>
+        <h2 tpl-ref="recado"><b>Provas até o momento</b></h2>
+    </div>
+
+    <app-card-materia [materiaList]='materias' [rawMateriasData]='rawData'></app-card-materia>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,9 @@
+<app-title-page-prova 
+    *ngIf="titulo" 
+    [color]="'blue'" 
+    [title]="titulo" 
+    [valores]="appService.conteudo" 
+    [hideTrilha]="mostrar"
+    (clickEvento)="obterConteudo($event)"></app-title-page-prova>
+
+<div [innerHTML]="conteudo" style="width: 95%;"></div>

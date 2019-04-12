@@ -1,0 +1,43 @@
+<div id="body">    
+    <main>
+            <app-title-page-prova 
+                [color]="'green'" 
+                [title]="titulo" 
+                [valores]="appService.videos" 
+                [hideTrilha]="mostrar"
+                (clickEvento)="obterVideo($event)"></app-title-page-prova>
+
+                
+                
+                <div class="container trocar container-video">   
+                    <section class="row case-sup selectpicker" data-style="btn-primary">
+                        <div class="container trocar">
+                            <div class="menu">
+                                <ul>
+                                    <li class="action1">
+                                        <a href="#"><i class="fas fa-retweet"></i></a>
+                                    </li>
+                                </ul>
+                            </div><!-- end-menu-rigth-border-margin -->
+                        </div>
+                        <!-- VIDEO -->
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12  video-change" id="video-azure" style="display: none;">                
+                                <video id="azuremediaplayer" webkit-playsinline="true" playsinline="true" class="azuremediaplayer amp-default-skin amp-big-play-centered" tabindex="0"></video>                                               
+                        </div>
+                        <!-- IFRAME E SLIDE -->
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">                            
+                            <app-iframe></app-iframe>
+                            <app-slide></app-slide>
+                            
+                        </div>
+                    </section>
+                </div>
+                <br />
+                <!-- MENU LEGENDA SLIDE -->
+                <div class="container-fluid">
+                    <div class="container trocar container-video">
+                        <app-tools-bar></app-tools-bar>
+                    </div>
+                </div>
+    </main>
+</div>

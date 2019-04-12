@@ -1,0 +1,27 @@
+.m_question_alternative {
+    padding: 5px;
+}
+
+.panel-default {
+    border-color: #ddd;
+}
+
+.panel {
+    margin-bottom: 20px;
+    margin-right: 2.5%;
+    margin-left: -2%;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 0;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.m_question_alternative .panel .panel-heading {
+    background: #2b3d4e;
+    color: #fff;
+}
+
+.pattern {
+    margin: 10px;
+}

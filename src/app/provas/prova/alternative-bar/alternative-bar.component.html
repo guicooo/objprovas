@@ -1,0 +1,77 @@
+<div class="btn btn-alternative">
+    <i class="fas fa-ellipsis-v"></i>
+</div>
+
+<nav class="m_nav_proff">
+    <div class="a_nav_proff--head">
+        <h1><b>Questão</b></h1>
+        <!-- <svg class="a_svg_head" height="100" width="250">
+            <line class="line_first" x1="0" y1="50" x2="200" y2="50"></line>
+            <line class="line_second" x1="0" y1="50" x2="200" y2="50"></line>
+        </svg> -->
+        <h2 tpl-ref="quantidade">{{ numeroDaQuestao }}/{{ questoes ? questoes.length : 10}}</h2>
+
+    </div>
+
+    <ul *ngIf="questoes" class="nav nav-sidebar right-float">
+        <li  *ngFor="let item of questoes; let i = index" id="{{ item.id }}" [class]="i == 0 ? 'active' : '' ">
+            <svg class="a_svg_question" height="80" width="40">
+                <line *ngIf="i+1 == questoes.length" x1="10" y1="0" x2="10" y2="40"></line>
+                <line *ngIf="i+1 != questoes.length" x1="10" y1="0" x2="10" y2="80"></line>
+                <svg *ngIf="buscarPercentual(item) == 0" x="0px" y="27" width="100" height="100">
+                    <g>
+                        <path class="st0" d="M12.5,0C5.6,0,0,5.6,0,12.5C0,19.4,5.6,25,12.5,25C19.4,25,25,19.4,25,12.5C25,5.6,19.4,0,12.5,0z"></path>
+                        <path class="st2" d="M12,11.9V1.7C6.5,1.9,2,6.3,1.7,11.9H12z"></path>
+                        <path class="st2" d="M1.7,12.8C1.8,18.5,6.3,23.1,12,23.3V12.8H1.7z"></path>
+                        <path class="st2" d="M13,12.8v10.5c5.7-0.2,10.2-4.8,10.4-10.5H13z"></path>
+                        <path class="st2" d="M23.3,11.9C23,6.3,18.5,1.9,13,1.7v10.2H23.3z"></path>
+                    </g>
+                </svg>
+                <svg *ngIf="buscarPercentual(item) == 1" x="0px" y="27" width="100" height="100">
+                    <g>
+                        <path class="st0" d="M12.5,0C5.6,0,0,5.6,0,12.5C0,19.4,5.6,25,12.5,25C19.4,25,25,19.4,25,12.5C25,5.6,19.4,0,12.5,0z"></path>
+                        <path class="st1" d="M12,11.9V1.7C6.5,1.9,2,6.3,1.7,11.9H12z"></path>
+                        <path class="st1" d="M1.7,12.8C1.8,18.5,6.3,23.1,12,23.3V12.8H1.7z"></path>
+                        <path class="st1" d="M13,12.8v10.5c5.7-0.2,10.2-4.8,10.4-10.5H13z"></path>
+                        <path class="st1" d="M23.3,11.9C23,6.3,18.5,1.9,13,1.7v10.2H23.3z"></path>
+                    </g>
+                </svg>
+                <svg *ngIf="buscarPercentual(item) == 0.5" x="0px" y="27" width="100" height="100">
+                    <g>
+                        <path class="st0" d="M12.5,0C5.6,0,0,5.6,0,12.5C0,19.4,5.6,25,12.5,25C19.4,25,25,19.4,25,12.5C25,5.6,19.4,0,12.5,0z"></path>
+                        <path class="st2" d="M12,11.9V1.7C6.5,1.9,2,6.3,1.7,11.9H12z"></path>
+                        <path class="st2" d="M1.7,12.8C1.8,18.5,6.3,23.1,12,23.3V12.8H1.7z"></path>
+                        <path class="st1" d="M13,12.8v10.5c5.7-0.2,10.2-4.8,10.4-10.5H13z"></path>
+                        <path class="st1" d="M23.3,11.9C23,6.3,18.5,1.9,13,1.7v10.2H23.3z"></path>
+                    </g>
+                </svg>
+                <svg *ngIf="buscarPercentual(item) == 0.25" x="0px" y="27" width="100" height="100">
+                    <g>
+                        <path class="st0" d="M12.5,0C5.6,0,0,5.6,0,12.5C0,19.4,5.6,25,12.5,25C19.4,25,25,19.4,25,12.5C25,5.6,19.4,0,12.5,0z"></path>
+                        <path class="st2" d="M12,11.9V1.7C6.5,1.9,2,6.3,1.7,11.9H12z"></path>
+                        <path class="st2" d="M1.7,12.8C1.8,18.5,6.3,23.1,12,23.3V12.8H1.7z"></path>
+                        <path class="st2" d="M13,12.8v10.5c5.7-0.2,10.2-4.8,10.4-10.5H13z"></path>
+                        <path class="st1" d="M23.3,11.9C23,6.3,18.5,1.9,13,1.7v10.2H23.3z"></path>
+                    </g>
+                </svg>
+                <svg *ngIf="buscarPercentual(item) == 0.75" x="0px" y="27" width="100" height="100">
+                    <g>
+                        <path class="st0" d="M12.5,0C5.6,0,0,5.6,0,12.5C0,19.4,5.6,25,12.5,25C19.4,25,25,19.4,25,12.5C25,5.6,19.4,0,12.5,0z"></path>
+                        <path class="st2" d="M12,11.9V1.7C6.5,1.9,2,6.3,1.7,11.9H12z"></path>
+                        <path class="st1" d="M1.7,12.8C1.8,18.5,6.3,23.1,12,23.3V12.8H1.7z"></path>
+                        <path class="st1" d="M13,12.8v10.5c5.7-0.2,10.2-4.8,10.4-10.5H13z"></path>
+                        <path class="st1" d="M23.3,11.9C23,6.3,18.5,1.9,13,1.7v10.2H23.3z"></path>
+                    </g>
+                </svg> 
+                <line x1="25" y1="40" x2="40" y2="40"></line>
+            </svg>
+            <a (click)="obterQuestao(item.id)" href="javascript:void(0)">
+                <span>
+                    <b> {{ item.numero }}.ª</b>  {{ item.tipo == 'Alternativa' ? 'objetiva' : item.tipo.toLowerCase() }}
+                </span>
+                <p></p>
+            </a>
+        </li>        
+    </ul>
+
+</nav>

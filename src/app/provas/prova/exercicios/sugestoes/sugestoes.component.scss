@@ -1,0 +1,70 @@
+@import "../../../../scss/default";
+
+
+@mixin colorTitle($color1, $color2) {
+    h2 {color: $color2;}
+    hr {background-color: $color2;}
+    .number-title-sugestoes {color: $color1;.ativo{background-color:  $color1;color: white}}
+}
+
+.red {@include colorTitle($proof-color-1, $proof-color-3);}
+.blue {@include colorTitle($content-color-1, $content-color-3);}
+.green {@include colorTitle($video-color-1, $video-color-3);}
+.yellow {@include colorTitle($assignment-color-2, $assignment-color-3);}
+.orange {@include colorTitle($resolucao-color-1, $resolucao-color-2);}
+.violet {@include colorTitle($jogos-color-1, $jogos-color-2);}   
+.pink {@include colorTitle($apoio-color-1, $apoio-color-2);}     
+
+.title-prova {
+    padding: 6px 0px;
+    hr {
+        height: 1px;
+    }
+    h2 {
+        font-size: 25px;
+        margin-left: 20px;
+        font-weight: bold;
+    }
+}
+li {
+    float: left;
+}
+.number-title-sugestoes {
+    padding: 0;
+    list-style: none;
+    display: inherit;
+        li{
+        padding: 8px 13px;
+        cursor: pointer;
+        }   
+    
+}
+.modal-content {
+    border-radius: 0;
+    .modal-header {
+        border: 0;
+        background-color: $assignment-color-1;
+        border-radius: 0;
+        padding: 15px;
+        .close {
+            opacity: 1;
+            background: #c74f43;
+            color: #fff;
+            padding: 4px 10px 9px 11px;
+            position: relative;
+            top: 10px;
+            right: 10px;
+        }
+    }
+    .modal-body {
+        padding-top: 4px;
+    }
+    .modal-footer {
+        background-color: $assignment-color-1;
+        .btn-close {
+            background-color: $assignment-color-2;
+            width: 100%;
+            font-weight: bold;
+        }
+    }
+}

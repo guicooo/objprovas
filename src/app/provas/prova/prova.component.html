@@ -1,0 +1,37 @@
+<app-sidebar-prova *ngIf="prova" [prova]="prova" [opcoesSidebar]="opcoesSidebar"></app-sidebar-prova>
+
+<div *ngIf="prova" class="row  head-prova">
+  <div *ngIf="prova.notaFinal" class="col-md-3 col-sm-4 col-12 nota">
+    <span>Nota: <b>{{ prova.notaFinal.toFixed(2) }}</b></span>
+  </div>
+  <!-- <div class="col-5 detalhes text-center">
+    <span style="margin-right: 40px;">
+        <i class="fa fa-university" title="Check"></i>
+        <span>Objetivo</span>
+    </span>
+    <span>
+        <i class="fa fa-check" title="Check"></i>
+        <span>Prova Concluída</span>
+    </span>    
+  </div> -->
+
+  <div class="col-md-9 col-sm-8 col-12  questoes">
+    <div class="acertos">
+      Acerto(s)
+      <p>{{ prova.acertos }}</p>
+    </div>
+    <div class="parciais">
+      Parcial(is)
+      <p>{{ prova.parciais }}</p>
+    </div>
+    <div class="erros">
+      Erro(s)
+      <p>{{ prova.erros }}</p>
+    </div>        
+  </div>
+
+</div>
+
+<router-outlet></router-outlet>
+
+<app-alternative-bar (trocaQuestao)="obterQuestao($event)" *ngIf="prova" [prova]="prova" ></app-alternative-bar>

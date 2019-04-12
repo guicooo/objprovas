@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12" *ngFor="let item of provas">
+    <div class="m_exploitation chart-content">
+      <div class="a_exploitation_head--type2">
+        <h1 class="">{{ item.rotulo }}</h1>
+        <hr>
+        <h3>Concluída</h3>
+      </div>
+      <div class="m_exploitation_svg" data-percent="62.5">
+        <h3>Nota</h3>
+        
+        <h1 class="m_exploitation_svg__nota featured">{{ item.notaFinal }}/{{ item.notaMaxima }}</h1>
+        <!-- <h1 *ngIf="item.notaFinal % 1 == 0" class="m_exploitation_svg__nota featured">{{ item.notaFinal }}</h1> -->
+        <!-- <h3>Nota máxima<span>   {{ item.notaMaxima }}</span></h3> -->
+        <!-- <h3>Desempenho 1212</h3> -->
+        <div class="m_exploitation_notes row" style="margin: 0;">
+          <div class="a_exploitation_left col-4">
+            <h3>Acerto(s)</h3>
+            <h1 class="m_exploitation_svg__nota ">{{ item.acertos }}</h1>
+          </div>
+          <div class="a_exploitation_rigth col-4">
+            <h3>Erro(s)</h3>
+            <h1 class="m_exploitation_svg__nota">{{ item.erros }}</h1>
+          </div>
+          <div class="a_exploitation_rigth col-4" style="background: #FFA500">
+            <h3>Parcial(is)</h3>
+            <h1 class="m_exploitation_svg__nota">{{ item.parciais }}</h1>
+          </div>
+        </div>
+        <a routerLink="/prova/detalhes/{{ item.id }}" class="m_exploitation_btn">Ver detalhes</a>
+      </div>
+    </div>
+  </div>
+</div>

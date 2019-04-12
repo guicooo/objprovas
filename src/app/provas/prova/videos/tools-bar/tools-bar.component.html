@@ -1,0 +1,84 @@
+<section class="row">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="slide-aba active">
+          <a href="#tab-slide" aria-controls="tab-slide" role="tab" data-toggle="tab"><i class="fas fa-film"></i> Slides</a>
+      </li>
+      <li role="presentation" class="legenda-aba">
+          <a href="#tab-legenda" aria-controls="tab-legenda" role="tab" data-toggle="tab"><i class="fas fa-indent"></i> Legenda</a>
+      </li>
+      <li role="presentation" class="buscar-aba">
+          <form>
+              <div class="input-group buscar-vid">
+                  <input type="text" class="form-control" placeholder="Buscar no vídeo...">
+                  <span class="input-group-btn">
+                      <button class="btn btn-default" href="#tab-busca" aria-controls="tab-busca" role="tab" data-toggle="tab" type="submit"><i class="fas fa-search"></i></button>
+                  </span>
+              </div><!-- /input-group -->
+          </form>
+      </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+      <!-- conteudo de Legendas -->
+      <div role="tabpanel" class="tab-pane" id="tab-legenda">
+          <select class="form-control select-header">
+              <!-- <option value="pt" class="active">Português</option> -->
+          </select>
+
+          <section class="row">
+              <div class="col-sm-12">
+                  <div id="legenda">
+                      <div class="legenda-separador" style="display: block;
+                                                              position: absolute;
+                                                              background-color: black;
+                                                              height: 45px;
+                                                              opacity: .2;
+                                                              filter: alpha(opacity=40);
+                                                              width: 100%;
+                                                              margin-left: -23px;
+                                                              margin-top: -40px;">&emsp;</div>
+                      <div id="" class="ttml-item ttml-item-active" idioma-legenda="" url-legenda="">
+
+                      </div>
+
+                  </div>
+              </div>
+          </section>
+
+      </div>
+      <!-- conteudo de Busca -->
+      <div role="tabpanel" class="tab-pane" id="tab-busca">
+          <div class="row recipiente" id="filtro">
+              <div id="Model.Legenda.Idioma" class="ttml-item-busca">
+                  <div class="col-sm-12">
+                      <form action="Url.Action = Xml" method="post">
+                          <input type="hidden" name="url" value="Model.Legenda.Url" />
+                          <div class="input-group">
+                              <input type="text" name="Texto" class="form-control change-search" value="Model.Texto" placeholder="Pesquisar neste vídeo...">
+                              <span class="input-group-btn">
+                                  <button class="btn btn-default sub-1" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                              </span>
+                          </div>
+                      </form>
+                  </div>
+                  <div class="scroll-case col-sm-12">
+                      <p>Resultados <span class="badge">0</span></p>
+                      <div class="list-group ttml-item-search" idioma-filtro="Model.Legenda.Idioma" url-filtro="Model.Legenda.Url"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- conteudo de Slides -->
+      <div role="tabpanel" class="tab-pane active" id="tab-slide">
+          <section class="row">
+              <div class="col-sm-12">
+                  <div id="slide-bar" class="scroller">
+                      <div class="container-slide" style="position: relative;"></div>
+                  </div>
+              </div>
+          </section>
+      </div>
+  </div>
+</section>

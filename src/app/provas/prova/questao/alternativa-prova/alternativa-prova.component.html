@@ -1,0 +1,11 @@
+<div class="m_question_alternative" style="width: 95%;">  
+    <ul class="container-alternative">
+       <li *ngFor="let item of questaoAtiva.alternativas; let indice = index" [class]="questaoAtiva.alternativas[indice].ehCorreta ? 'correct' : indice == indiceResposta ? 'incorrect' : ''">
+          <input type="radio" name="selector">
+          <label [innerHTML]="devolverDescricao(indice, item.descricao)"></label>          
+          <div class="check">
+             <div class="inside"></div>
+          </div>
+       </li>       
+    </ul>
+ </div>

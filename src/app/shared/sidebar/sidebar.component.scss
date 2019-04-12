@@ -1,0 +1,229 @@
+@import "../../scss/default";
+
+$navbar-height:60px;
+
+.sidebar {
+    background-color: $plataform-color-1;
+    position: fixed;
+    top: $navbar-height + 10;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: $plataform-color-sidebar;
+    border-right:0;
+    transform: translate(0%, 0%);
+    width: 16%;
+    transition: all ease-out 0.3s;
+
+    @media (max-width: 980px) { width: 26%; }
+
+    @media #{#{$mobile}}{
+        transform: translate(-100%, 0%);
+        width: 80%;
+    }
+
+    &.openSidebar{
+        transform: translate(0%, 0%);  
+    }
+    .link-father {
+        cursor: pointer;
+        padding-left: 12px;
+        padding: 10px;
+        transition: all ease-in-out 0.2s;
+        .fa-angle-right {
+            float: right;
+            margin-right: 2px;
+            color: white;
+        }
+        span {
+            color: white;
+            margin-left: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        i {
+            font-size: 27px;
+            color: $plataform-color-3;  
+        }
+        &:hover {
+            background-color: white;
+            span, .fa-angle-right {
+                color: $plataform-color-3;   
+            }
+        }
+    }
+    .nav-sidebar {
+        background: $plataform-color-5;  
+        padding: 0px;
+        padding-bottom: 10px;
+   
+        .list-materias {
+            list-style: none;
+            font-size: 12px;
+            // @media only screen and (max-width: 843px) and (min-width: 768px)  {font-size: 10px;}
+            li{
+                cursor: pointer;
+                background-color:$plataform-color-3;
+                margin: 0;
+                padding: 10px 12px 10px 0px;
+                
+                &:hover{
+                    background: #fff!important;
+                    span {
+                        color: $plataform-color-3;
+                    }
+                    .fa-angle-right{
+                        color:$plataform-color-3 !important;
+                    }
+                }
+                &:nth-last-child(2n+0){
+                    background-color:$plataform-color-4;
+                    .fa-angle-right{
+                        color: white;
+                    }
+                    &:hover{
+                        background: #fff!important;
+                        span {
+                            color: $plataform-color-3;
+                        }
+                        .fa-angle-right{
+                            color:$plataform-color-3 !important;
+                        }
+                    }
+                }
+                & i{
+                    color: $plataform-color-4;        
+                } 
+                     
+                    color: #fff;
+                    transition: all ease-in-out 0.2s;
+
+                    & span{
+                        padding-bottom:0; 
+                        line-height: 20px;
+                        padding-left: 10px;  
+                    }
+                    & .fa-angle-right{
+                        color:#fff;
+                        float: right;
+                        transition: all ease-in-out 0.2s;
+                    }
+               
+                       
+            }
+        }
+    }
+
+
+
+}
+.btn-toogle {
+    display: none;
+    @media #{#{$mobile}}{
+        display: block;
+        position: fixed;
+        top: 13px;
+        z-index: 1033;
+        left: 6px;
+    }    
+}
+
+.navbar-mobile{
+    display: none;
+    @media #{#{$mobile}}{
+        display: inline-flex;
+        list-style: none;
+
+        .btn-exit{
+            background: $plataform-color-6;
+            transition: all ease-in-out 0.3s;
+            position: absolute;
+            right: 0;
+            a {
+                margin-top: 2px;
+                i{
+                    margin: 0;
+                    color: #fff;
+                    font-size: 20px;
+                }
+    
+            }
+    
+        }
+        .icon-user-name{
+            padding-top: 28px;
+            font-size: 14px;
+            i{
+                color: $plataform-color-2;
+            }
+        }
+        .user-name{
+            color: #fff;
+            padding-top: 40px;
+            font-weight: bold;
+            font-size: 14px;
+        }        
+    }
+}
+
+
+
+
+
+
+
+// HAMBURGUER
+.bar1, .bar2, .bar3 {
+    width: 23px;
+    height: 2px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+    border-radius: 100px;
+  }
+  
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-4px, 5px);
+    background-color: white;
+  }
+  
+  .change .bar2 {opacity: 0;  background-color: white;}
+  
+  .change .bar3 {
+      background-color: white;
+    -webkit-transform: rotate(45deg) translate(-6px, -7px);
+    transform: rotate(45deg) translate(-6px, -7px);
+  }
+
+        .btn-exit{
+            background: $plataform-color-6;
+            transition: all ease-in-out 0.3s;
+            a {
+                margin-top: 2px;
+                i{
+                    margin: 0;
+                    color: #fff;
+                    margin-top: 100%;
+                }
+
+            }
+
+        }
+        .icon-user-name{
+            padding-top: 28px;
+            i{
+                color: $plataform-color-2;
+            }
+        }
+        .user-name{
+            color: #fff;
+            padding-top: 40px;
+            font-weight: bold;
+        }
+  
+  

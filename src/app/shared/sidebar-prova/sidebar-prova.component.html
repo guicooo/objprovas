@@ -1,0 +1,104 @@
+<div class="btn btn-toogle openMenu-provas">
+    <p class="bar1"></p>
+    <p class="bar2"></p>
+    <p class="bar3"></p>
+</div>
+<!-- <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-8 sidebar sidebar-descricao-prova open"> -->
+<div class="sidebar sidebar-descricao-prova open">
+
+<div class="btn-exit">
+    <a (click)="sair()" href="javascript:void(0)" id="deslogar" class="nav-link">
+        <i class="fa fa-power-off fa-2x" title="Sair"></i>
+    </a>
+</div>  
+
+<a (click)="buttonBack()" class="backButton">
+    <label>
+    <i class="fa fa-chevron-left arrow-move" title="Check"></i> 
+    <span class="item-leave">Voltar</span></label>
+</a>
+
+<!-- <div *ngIf="appService.porcRevisao" class="review-prova" style="margin-bottom: 10px;">
+    <i class="fas fa-chart-bar txt-move"></i>
+    <p class=" txt-move">{{ appService.porcRevisao }}<span>%</span></p>
+    <span class="item-leave">Revisão</span><br>
+</div>     -->
+
+
+<ul *ngIf="appService.questaoAtiva" class="list-provas-color">
+    <li class="lista li-provas " routerLinkActive="li-active" routerLink="detalhes/{{ appService.provaAtiva.id }}" >
+        <div class="trilha-sidebar check">
+            <div class="cicle"></div>
+            <div class="line-h"></div>
+            <div class="line-v"></div>
+        </div>           
+        <i class="fa fa-file-text-o item-move {{ appService.questaoAtiva.id ? 'ativando' : 'opacity' }} "></i>
+        <span class="item-leave">Prova</span>
+    </li>
+
+    <li *ngIf="appService.conteudo.length > 0" (click)="appService.classeCheckConteudo = 'check'" routerLinkActive="li-active" class="lista li-conteudo" routerLink="conteudo/{{ appService.provaAtiva.id }}">
+        <!-- <div *ngIf="appService.conteudo.length == 0" class="spinner"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div><div class="circle5"></div><div class="circle6"></div><div class="circle7"></div><div class="circle8"></div><div class="circle9"></div><div class="circle10"></div><div class="circle11"></div><div class="circle12"></div></div>             -->
+        <div class="trilha-sidebar {{ appService.classeCheckConteudo }}" >
+            <div class="cicle"></div>
+            <div class="line-h"></div>
+            <div class="line-v"></div>
+            </div>            
+        <i class="fa fa-book item-move {{ appService.conteudo.length > 0 ? 'ativando' : 'opacity' }} "></i>
+        <span class="item-leave">Conteúdo</span>
+    </li>
+
+    <li *ngIf="appService.videos.length > 0" class="lista li-videos"  (click)="appService.classeCheckVideos = 'check'" routerLinkActive="li-active" routerLink="videos/{{ appService.provaAtiva.id }}">        
+        <!-- <div *ngIf="appService.videos.length == 0" class="spinner"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div><div class="circle5"></div><div class="circle6"></div><div class="circle7"></div><div class="circle8"></div><div class="circle9"></div><div class="circle10"></div><div class="circle11"></div><div class="circle12"></div></div>             -->
+        <div class="trilha-sidebar {{ appService.classeCheckVideos }}">
+            <div class="cicle"></div>
+            <div class="line-h"></div>
+            <div class="line-v"></div>
+            </div>            
+        <i class="fa fa-caret-square-o-right item-move {{ appService.videos.length > 0 ? 'ativando' : 'opacity' }}"></i>
+        <span class="item-leave">Vídeos</span>
+    </li>
+    
+    <li *ngIf="appService.exercicios.length > 0" class="lista li-exercicios " (click)="appService.classeCheckExercicios = 'check'" routerLinkActive="li-active"  routerLink="exercicios/{{ appService.provaAtiva.id }}">
+        <!-- <div *ngIf="appService.exercicios.length == 0" class="spinner"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div><div class="circle5"></div><div class="circle6"></div><div class="circle7"></div><div class="circle8"></div><div class="circle9"></div><div class="circle10"></div><div class="circle11"></div><div class="circle12"></div></div>             -->
+        <div class="trilha-sidebar {{ appService.classeCheckExercicios }}">
+            <div class="cicle"></div>
+            <div class="line-h"></div>
+            <div class="line-v"></div>
+        </div>            
+        <i class="fa fa-commenting-o item-move  {{ appService.exercicios.length > 0 ? 'ativando' : 'opacity' }} "></i>
+        <span class="item-leave">Exercícios</span>
+    </li>
+
+    <li *ngIf="appService.jogos.length > 0"  class="lista li-jogos" (click)="appService.classeCheckJogos = 'check'" routerLinkActive="li-active" routerLink="jogos/{{ appService.provaAtiva.id }}">
+        <!-- <div *ngIf="appService.jogos.length == 0" class="spinner"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div><div class="circle5"></div><div class="circle6"></div><div class="circle7"></div><div class="circle8"></div><div class="circle9"></div><div class="circle10"></div><div class="circle11"></div><div class="circle12"></div></div>             -->
+        <div class="trilha-sidebar {{ appService.classeCheckJogos }}">
+            <div class="cicle"></div>
+            <div class="line-h"></div>
+            <div class="line-v"></div>
+        </div>             
+        <i style="margin-left: -6px;" class="fas fa-gamepad item-move  {{ appService.jogos.length > 0 ? 'ativando' : 'opacity' }}"></i>
+        <span class="item-leave">Jogos</span>
+    </li>        
+
+    <li *ngIf="appService.textoApoio && appService.textoApoio.length > 0"  (click)="appService.classeCheckApoio = 'check'" routerLinkActive="li-active" class="lista li-apoio " routerLink="apoio/{{ appService.provaAtiva.id }}">
+        <!-- <div *ngIf="appService.textoApoio && appService.textoApoio.length == 0" class="spinner"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div><div class="circle5"></div><div class="circle6"></div><div class="circle7"></div><div class="circle8"></div><div class="circle9"></div><div class="circle10"></div><div class="circle11"></div><div class="circle12"></div></div>             -->
+        <div class="trilha-sidebar {{ appService.classeCheckApoio }}">
+            <div class="cicle"></div>
+            <div class="line-h"></div>
+            <div class="line-v"></div>
+        </div> 
+        <i class="fas fa-font item-move {{ appService.textoApoio && appService.textoApoio.length > 0 ? 'ativando' : 'opacity' }}"></i>
+        <span class="item-leave">Texto de apoio</span>
+    </li>
+
+    <li class="lista li-resolucao" *ngIf="appService.questaoAtiva && ( appService.questaoAtiva.resposta || appService.questaoAtiva.alternativas )" (click)="appService.classeCheckResolucao = 'check'" routerLinkActive="li-active" routerLink="resolucao/{{ appService.provaAtiva.id }}">
+        <div class="trilha-sidebar {{ appService.classeCheckResolucao }}">
+            <div class="cicle"></div>
+            <div class="line-h"></div>
+            <div class="line-v"></div>
+        </div>             
+        <i class="far fa-check-square item-move {{ appService.questaoAtiva && ( appService.questaoAtiva.resposta || appService.questaoAtiva.alternativas ) ? 'ativando' : 'opacity' }}"></i>
+        <span class="item-leave">Resolução</span>
+    </li>             
+</ul>       
+</div>

@@ -1,0 +1,42 @@
+@import "../../../scss/default";
+
+
+@mixin colorTitle($color1, $color2) {
+    h2 {color: $color2;}
+    hr {background-color: $color2;}
+    .number-title {color: $color1;.ativo{background-color:  $color1;color: white}}
+}
+
+.red {@include colorTitle($proof-color-1, $proof-color-3);}
+.blue {@include colorTitle($content-color-1, $content-color-3);}
+.green {@include colorTitle($video-color-1, $video-color-3);}
+.yellow {@include colorTitle($assignment-color-1, $assignment-color-3);}
+.orange {@include colorTitle($resolucao-color-1, $resolucao-color-2);}
+.violet {@include colorTitle($jogos-color-1, $jogos-color-2);}   
+.pink {@include colorTitle($apoio-color-1, $apoio-color-2);}     
+.default {@include colorTitle($plataform-color-2, $plataform-color-1);}  
+
+.title-prova {
+    padding: 6px 0px;
+    hr {
+        height: 1px;
+    }
+    h2 {
+        font-size: 25px;
+        margin-left: 10px;
+        font-weight: bold;
+    }
+}
+.number-title {
+    padding: 0;
+    padding-left: 5px;
+    padding-top: 6px;
+    list-style: none;
+    font-weight: bold;
+        li{
+        padding: 8px 13px;
+        cursor: pointer;
+        float: left;
+        }   
+    
+}

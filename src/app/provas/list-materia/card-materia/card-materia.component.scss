@@ -1,0 +1,143 @@
+@import "../../../scss/default";
+.a_exploitation_head{
+    background: $plataform-color-3;
+    padding: 1px;
+    left: 0;
+    margin-bottom: 10px;
+    & h1{
+        margin: 10px;
+        font-size: 18px;
+        margin-left: 10px;
+        color: #fff;
+    }
+    & hr{
+        margin: 10px;
+        width: 90%;
+        border: 1px solid $plataform-color-1;
+    }
+    & h3{
+        margin: 10px;
+        font-size: 12px;
+        font-weight: bold;
+        margin-left: 10px;
+        text-align: right;
+        color: $Color-util-sucess;
+    }
+}
+
+.m_exploitation{
+    background: $plataform-color-1;
+    margin: 0;
+    padding: 0;
+    & button{
+        border: 0;
+        padding: 15px;
+        background: $plataform-color-2;
+        width: 100%;
+        color: rgb(201, 142, 142);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        transition: all ease-in-out 0.3s;
+        &:hover{
+            background: $plataform-color-5;
+            color: $plataform-color-2;
+        }
+    }
+    .m_exploitation_svg {
+        padding: 10px;
+        & a{
+            position: relative;
+            display: inline-block;
+            padding: 15px;
+            background: $plataform-color-2;
+            width: 100%;
+            color: #fff;
+            transition: all ease-in-out 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            &:hover{
+                background: $plataform-color-5;
+                color: $plataform-color-2;
+            }
+        }
+        & h3{
+            font-size: 12px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+        .father-circle {
+            padding: 20px 0px;
+
+            text-align: center;
+            
+            round-progress {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .number-circle {
+                position: absolute;
+                transform: translate(-45%, 70%);
+                font-size: 56px;
+                b {
+                    font-size: 30px;
+                    color: $white;
+                    position: relative;
+                    top: -20px
+                }
+      
+                // @media #{#{$mobile}}{
+                //     font-size: 8vh;
+                //     margin-top: 30%;
+                // }   
+                // @media #{#{$iphone5}}{
+                //     margin-top: 27%;
+                // }  
+
+                   
+            }
+        }
+    }
+
+}
+
+#svg circle {
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear;
+    /*Cor do contorno fixo*/
+    stroke: #d8d8d8;
+    stroke-width: 1em;
+  
+  #svg #bar {
+    /*Cor do contorno dinâmico*/
+    stroke: #007f3d;
+  }
+  #cont {
+    display: block;
+    height: 200px;
+    width: 200px;
+    margin: 2em auto;
+    border-radius: 100%;
+    position: relative;
+  }
+  #cont:after {
+    position: absolute;
+    display: block;
+    height: 160px;
+    width: 160px;
+    left: 50%;
+    top: 50%;
+    content: attr(data-preenchimento)"%";
+    margin-top: -80px;
+    margin-left: -80px;
+    border-radius: 100%;
+    line-height: 160px;
+    font-size: 2em;
+  }
+
+  input {
+    color: #000;
+  }
+}
+
+

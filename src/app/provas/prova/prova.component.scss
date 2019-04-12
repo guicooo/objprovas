@@ -1,0 +1,67 @@
+@import "../../scss/default";
+
+.head-prova {
+    color: $plataform-color-2;
+    font-size: 20px;
+    margin-right: 30px;
+    margin-bottom: 10px;
+    @media #{$mobile}{
+        margin: 0;
+        text-align: center;
+    }
+    .nota {
+        span{
+            b {
+                color: $Color-util-sucess;
+                font-size: 30px;
+            }
+        }
+
+    }
+    .detalhes {
+        padding-top: 10px;
+        span{
+            i{
+                color: $plataform-color-4;
+                font-size: 25px;
+            }
+        }
+    
+    }
+    .questoes {
+        text-align: right;
+        @media #{$mobile}{
+            text-align: center;
+        }        
+        .acertos, .parciais, .erros{
+            padding: 3px 3px 13px 3px;
+            display: inline-block;
+            width: 95px;
+            color: white;
+            font-size: 14px;
+            line-height: 21px;
+            text-align: center;
+            margin-right: -6px;
+            @media #{$mobile}{
+                width: 33%;
+            }             
+            p {
+                margin: 0;
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+        }
+        .acertos {
+            background-color: $Color-util-sucess;
+        }
+        .parciais {
+            background-color: $Color-util-warning;
+        }        
+        .erros{
+            background-color: $Color-util-error;
+        }
+
+    
+    }
+}

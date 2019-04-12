@@ -1,0 +1,34 @@
+<div *ngIf="questaoAtiva && questaoAtiva.sugestoes.length > 0" class="btn-sugestaao text-center" data-toggle="modal" data-target="#exampleModal">
+    <i class="fas fa-comment"></i>
+    <i class="fas fa-exclamation"></i><br>
+
+     <span>Sugestões</span>
+</div>
+
+<div class="m_question_alternative" style="margin-top: 20px;">
+    <ul class="container-alternative">
+       <li *ngFor="let item of questaoAtiva.alternativas">
+          <input type="radio" *ngIf="item.texto || item.textoImg" [id]="item.id" name="selector">
+          <label *ngIf="item.texto" [for]="item.id" [innerHTML]="item.texto">
+            
+            </label>
+            <label *ngIf="item.textoImg" [for]="item.id" >
+                <img [src]="appService.urlImagemTarefaNet + item.textoImg.toString().replace('~/','')">
+            </label>            
+          <div *ngIf="item.texto || item.textoImg" class="check">
+             <div class="inside"></div>
+          </div>
+       </li>       
+    </ul>
+    <div *ngIf="!avancar" class="btn-group group-btn-prova">
+        <button type="button" *ngIf="!_ultimo" (click)="pular()" id="pular" class="btn btn-pular">Pular</button>
+        <button type="button" (click)="confirmar()" id="confirma" class="btn btn-confirma">Confirmar</button>
+    </div>
+    <div *ngIf="avancar" class="btn-group group-btn-prova">
+        <button type="button" id="avancar" (click)="avancarClick()" class="btn btn-avanca">Avançar</button>        
+    </div>
+ </div>
+ 
+
+
+<app-sugestoes *ngIf="questaoAtiva && questaoAtiva.sugestoes.length > 0" [questaoAtiva]="questaoAtiva"></app-sugestoes>

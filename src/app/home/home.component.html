@@ -1,0 +1,71 @@
+<!-- <div class="row">
+
+
+  <div class="col-md-8 hero-banner">
+    <div class="mask"></div>
+    <a target="_blank" href="https://www2.objetivo.br/default.asp">
+      <div class="row" style="margin: 0;">
+        <div class="col-md-12 col-lg-6">
+          <h5><b>Você está <span>preparado?</span></b></h5>
+          <p>Melhore seus conhecimentos com o Conteúdo <i>On-Line</i></p>
+        </div>
+        <div class=" col-lg-6">
+          <img src="assets/Images/logoConteudoOnline.svg" alt="logo conteudo online">
+        </div>
+      </div>
+      <div class="row" style="margin: 0;">
+        <div class="col-md-12 text-center">
+          <button class="btn"><b>Saiba mais</b></button>
+        </div>
+ 
+      </div>      
+    </a>
+
+    
+  </div>
+  
+  <div class="col-md-4 hero-calendar">
+    <h3>{{ dia }}</h3>
+    <hr>
+    <h4>{{ mes }}</h4>
+    <h5>{{ ano }}</h5>
+  </div>
+</div> -->
+
+
+<div class="row list-group-container">
+    <div id="table-responsive" class="table-responsive">
+      <div class="head-group-list">
+        <h3 tpl-ref="titulo">Últimas provas</h3>
+        <hr>
+        <!-- <h5 tpl-ref="recado">Fique atento aos detalhes</h5> -->
+      </div>
+    <div>                
+    <table id="table-prova" class="table">
+      <tbody>
+        <tr *ngFor="let item of ultimasProvas">
+          <td class="">{{ item.rotulo }}</td>
+          <td *ngIf="item.notaFinal % 1 != 0">Nota <span class="otice&quot;">{{ item.notaFinal.toFixed(2) }}</span></td>
+          <td *ngIf="item.notaFinal % 1 == 0">Nota <span class="otice&quot;">{{ item.notaFinal }}</span></td>
+          <td>
+            <a *ngIf="getFirstWord(item.rotulo).toLowerCase().indexOf('multidisciplina') > -1" routerLink="/disciplinas/multidisciplinar" class="btn btn-default btn-toggle-moobile">
+              <i class="fa fa-pie-chart"></i>
+              <span>Desempenho</span>
+            </a>
+            <a *ngIf="getFirstWord(item.rotulo).toLowerCase().indexOf('multidisciplina') == -1" routerLink="/disciplinas/{{ item.grade?.id }}" class="btn btn-default btn-toggle-moobile">
+              <i class="fa fa-pie-chart"></i>
+              <span>Desempenho</span>
+            </a>
+          </td>
+          <td>
+            <a routerLink="/prova/detalhes/{{ item.id }}" class="btn btn-default btn-toggle-moobile">
+              <i class="fa fa-file-alt"></i>
+              <span>Detalhes</span>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>    
+</div>     
+</div>
+</div>

@@ -1,0 +1,27 @@
+﻿
+
+
+.navbar-default {
+    border: 0;
+    padding: 5px;
+    margin-bottom: 40px;
+}
+.navbar-toggle {
+    color: white;
+    background-color: transparent ;
+    border: 0;
+    float: left;
+    margin-left: 15px;
+    margin-top: 15px;
+    &:hover {
+        color: white;
+        background-color: transparent;
+        border: 0;  
+    }
+}
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    background-color: transparent;
+}
+.navbar-toggle .icon-bar {
+    height: 3px;
+}

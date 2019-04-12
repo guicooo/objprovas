@@ -1,0 +1,49 @@
+<div class="btn btn-toogle openMenu">
+        <p class="bar1"></p>
+        <p class="bar2"></p>
+        <p class="bar3"></p>
+</div>
+
+
+<div class="sidebar">
+        <ul class="navbar-mobile row">
+
+                <li class="user-name icon-user-name">
+                    <p>Olá, <span> {{ _appService.nomeDoAluno }}! </span></p>
+                </li>
+        
+                <li class="icon-user-name">
+                    <a href="#" class="nav-link">
+                      <i class="fa fa-user-circle-o fa-2x" title="Usuário"></i>
+                    </a>
+                </li>
+        
+                <li class="btn-exit">
+                    <a (click)="sair()" href="javascript:void(0)" id="deslogar" class="nav-link">
+                      <i class="fa fa-power-off fa-2x" title="Sair"></i>
+                    </a>
+                </li>
+        
+        </ul>    
+
+    <ul class="nav-sidebar">
+        <li class="link-father" routerLink="/disciplinas">
+            <i class="fa fa-file-text-o fa-2x" title="Provas"></i>
+            <span>Provas</span>
+            <i class="arrow-icon fa fa-angle-right fa-2x"></i>
+        </li>
+        <ul *ngIf="materias || itemsLoaded" class="list-materias">
+          <li routerLink="/disciplinas/{{ item.id }}" *ngFor="let item of materias" class="link-child">              
+                <i class="fa {{ item.ico }} -o fa-2x" title="{{ item.disciplina.nome }}"></i>
+                <span>{{ item.disciplina.nome }}</span>
+                <i class="arrow-icon fa fa-angle-right fa-2x"></i>
+          </li>
+          <li routerLink="/disciplinas/multidisciplinar" class="link-child" *ngIf="itemsLoaded">              
+                <i class="fa -o fa-2x" title="Multidisciplinar"></i>
+                <span>Multidisciplinar</span>
+                <i class="arrow-icon fa fa-angle-right fa-2x"></i>
+          </li>
+        </ul>           
+    </ul>
+</div>
+

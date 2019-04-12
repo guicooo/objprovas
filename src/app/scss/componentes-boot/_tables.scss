@@ -1,0 +1,150 @@
+@import "../../../node_modules/bootstrap/scss/_tables.scss";
+
+
+.table {
+    margin: 0;
+    thead {
+        background-color: $plataform-color-1;
+        color: #fff;
+        th {
+            border:0 !important;
+            text-indent: 10px;
+        }
+    }
+    tr {
+        text-align: center;
+        cursor:default;
+    }
+    td * {
+        vertical-align:middle;
+        line-height: 100%;
+        
+    }
+    &[role="list"] {
+         *[role="heading"], *[role="listitem"] {
+            padding: $table-cell-padding;
+            line-height: $line-height-base;
+            vertical-align: top;
+            border-top: 1px solid $table-border-color;
+            cursor:default;
+        }
+
+         *[role="heading"] {
+            vertical-align: bottom;
+            border-bottom: 0;
+            background-color: lighten($plataform-color-3, 0%);
+            color: #fff;
+            * {
+                vertical-align:middle;
+            }
+         }
+    }
+}
+.table{
+    tbody{        
+        tr{
+            background: $plataform-color-4;
+            td{
+                border-top: 0;
+                border-bottom: 0;
+            }
+        }
+        tr:nth-last-child(2n+0){
+            background: $plataform-color-2;
+        }
+    }
+}
+.table-responsive {
+  overflow-x: auto;
+  min-height: 0.01%; // Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
+
+  @media screen and (max-width: 700px) {
+    width: 100%;
+    // margin-bottom: ($line-height-computed * 0.75);
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    //border: 1px solid @plataform-color-6;
+
+    // Tighten up spacing
+    > .table {
+      margin-bottom: 0;
+      
+      // Ensure the content doesn't wrap
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th,
+          > td {
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+
+    // Special overrides for the bordered tables
+    > .table-bordered {
+      border: 0;
+
+      // Nuke the appropriate borders so that the parent can handle them
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th:first-child,
+          > td:first-child {
+            border-left: 0;
+          }
+          > th:last-child,
+          > td:last-child {
+            border-right: 0;
+          }
+        }
+      }
+
+      // Only nuke the last row's bottom-border in `tbody` and `tfoot` since
+      // chances are there will be only one `tr` in a `thead` and that would
+      // remove the border altogether.
+      > tbody,
+      > tfoot {
+        > tr:last-child {
+          > th,
+          > td {
+            border-bottom: 0;
+          }
+        }
+      }
+
+    }
+  }
+}
+.table-striped {
+    *[role="listitem"] {
+        &:nth-of-type(odd) {
+            background-color: $plataform-color-6;
+        }
+    }
+}
+
+.table-hover {
+  *[role="listitem"]:hover {
+    background-color: $plataform-color-6;
+  }
+}
+
+.table-bordered {
+    border:none;
+    *[role="heading"], *[role="listitem"] {
+        border: 1px solid $plataform-color-6;
+      }
+}
+
+@media print{ 
+    .table {
+        thead {
+            th {
+                border:none !important;
+            }
+        }
+    }
+}

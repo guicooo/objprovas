@@ -1,0 +1,17 @@
+<!-- <div class="{{ color }}"> -->
+<div class="default">
+  <div class="row" style="margin-right: 38px;">
+    <div class="col title-prova">
+        <h2 class="" [innerHTML]="title"></h2>
+        <hr>
+    </div>
+  
+  </div>
+  <div class="row" style="margin-right: 38px;margin-top: -20px;" *ngIf="hideTrilha">
+    <ul class="number-title">
+      <li *ngFor="let item of valores; let i = index" [class]="i == 0 ? 'ativo' : ''" (click)="obter(item, $event)">{{ i + 1 }}</li>
+    </ul>
+  </div>
+</div>
+
+

@@ -1,0 +1,11 @@
+<div class="question_content">
+  <div>
+    <div [innerHTML]="enunciado"></div>   
+  </div>
+  <div *ngIf="enunciadoImg">
+    <img [src]="appService.urlImagemTarefaNet + enunciadoImg.toString().replace('~/','')">
+  </div>
+  <div *ngIf="imagem">
+    <img [src]="imagem">
+  </div>
+</div>
